@@ -1,4 +1,7 @@
-import { View, StyleSheet, type ViewProps } from "react-native";
+// biome-ignore lint/style/useImportType: <explanation>
+import React from "react";
+import { View, StyleSheet } from "react-native";
+import type { ViewProps } from "react-native";
 import { BlurView } from "@react-native-community/blur";
 import MaskedView from "@react-native-masked-view/masked-view";
 import LinearGradient from "react-native-linear-gradient";

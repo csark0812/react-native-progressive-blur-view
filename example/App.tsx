@@ -5,7 +5,8 @@
  * @format
  */
 
-import type React from "react";
+// biome-ignore lint/style/useImportType: <explanation>
+import React from "react";
 import type { PropsWithChildren } from "react";
 import {
 	ScrollView,

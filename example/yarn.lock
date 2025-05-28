@@ -1373,7 +1373,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@react-native-community/blur@^4.3.0", "@react-native-community/blur@^4.4.0":
+"@react-native-community/blur@^4.4.0":
   version "4.4.1"
   resolved "https://registry.yarnpkg.com/@react-native-community/blur/-/blur-4.4.1.tgz#72cbc0be5a84022c33091683ec6888925ebcca6e"
   integrity sha512-XBSsRiYxE/MOEln2ayunShfJtWztHwUxLFcSL20o+HNNRnuUDv+GXkF6FmM2zE8ZUfrnhQ/zeTqvnuDPGw6O8A==
@@ -1530,7 +1530,7 @@
     prompts "^2.4.2"
     semver "^7.5.2"
 
-"@react-native-masked-view/masked-view@^0.3.0", "@react-native-masked-view/masked-view@^0.3.1":
+"@react-native-masked-view/masked-view@^0.3.1":
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/@react-native-masked-view/masked-view/-/masked-view-0.3.2.tgz#7064533a573e3539ec912f59c1f457371bf49dd9"
   integrity sha512-XwuQoW7/GEgWRMovOQtX3A4PrXhyaZm0lVUiY8qJDvdngjLms9Cpdck6SmGAUNqQwcj2EadHC1HwL0bEyoa/SQ==
@@ -5406,7 +5406,7 @@ react-is@^19.0.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-19.1.0.tgz#805bce321546b7e14c084989c77022351bbdd11b"
   integrity sha512-Oe56aUPnkHyyDxxkvqtd7KkdQP5uIUfHxd5XTb3wE9d/kRnZLmKbDB0GWk919tdQ+mxxPtG6EAs6RMT6i1qtHg==
 
-react-native-linear-gradient@^2.8.0, react-native-linear-gradient@^2.8.3:
+react-native-linear-gradient@^2.8.3:
   version "2.8.3"
   resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.8.3.tgz#9a116649f86d74747304ee13db325e20b21e564f"
   integrity sha512-KflAXZcEg54PXkLyflaSZQ3PJp4uC4whM7nT/Uot9m0e/qxFV3p6uor1983D1YOBJbJN7rrWdqIjq0T42jOJyA==
@@ -5414,9 +5414,9 @@ react-native-linear-gradient@^2.8.0, react-native-linear-gradient@^2.8.3:
 "react-native-progressive-blur-view@file:..":
   version "1.0.0"
   dependencies:
-    "@react-native-community/blur" "^4.3.0"
-    "@react-native-masked-view/masked-view" "^0.3.0"
-    react-native-linear-gradient "^2.8.0"
+    "@react-native-community/blur" "^4.4.0"
+    "@react-native-masked-view/masked-view" "^0.3.1"
+    react-native-linear-gradient "^2.8.3"
 
 react-native@0.79.2:
   version "0.79.2"
