@@ -1,10 +1,9 @@
-import { View, type ViewStyle, StyleSheet, type ViewProps } from "react-native";
+import { View, StyleSheet, type ViewProps } from "react-native";
 import { BlurView } from "@react-native-community/blur";
 import MaskedView from "@react-native-masked-view/masked-view";
 import LinearGradient from "react-native-linear-gradient";
 
 export interface ProgressiveBlurViewProps extends ViewProps {
-	style?: ViewStyle;
 	blurType?: "xlight" | "light" | "dark";
 	blurAmount?: number;
 	gradientDirection?: "vertical" | "horizontal";
