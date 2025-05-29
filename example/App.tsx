@@ -99,16 +99,6 @@ function App(): React.JSX.Element {
 					>
 						ProgressiveBlurView
 					</Text>
-					<Image
-						source={{ uri: "https://picsum.photos/400/200" }}
-						style={{
-							width: 50,
-							height: 200,
-							borderRadius: 12,
-							marginBottom: 16,
-						}}
-						resizeMode="cover"
-					/>
 					<Text
 						style={[
 							styles.headerSubtitle,
@@ -126,14 +116,14 @@ function App(): React.JSX.Element {
 					<ExampleCard>
 						<View style={styles.imageContainer}>
 							<Image
-								source={{ uri: "https://picsum.photos/400/200" }}
-								style={styles.placeholderImage}
+								source={require("./assets/beautiful-mountain-landscape-with-snow-capped-peaks-lake-reflection-vibrant-sunset-colors-high-re.jpg")}
+								style={styles.backgroundImage}
 								resizeMode="cover"
 							/>
 							<ProgressiveBlurView
 								style={styles.blurOverlay}
 								blurType="light"
-								blurAmount={10}
+								blurAmount={15}
 							/>
 						</View>
 					</ExampleCard>
@@ -144,14 +134,14 @@ function App(): React.JSX.Element {
 					<ExampleCard>
 						<View style={styles.imageContainer}>
 							<Image
-								source={{ uri: "https://picsum.photos/400/200?random=2" }}
-								style={styles.placeholderImage}
+								source={require("./assets/dense-forest-with-tall-trees-misty-atmosphere-sunbeams-through-leaves-natural-green-tones-serene.jpg")}
+								style={styles.backgroundImage}
 								resizeMode="cover"
 							/>
 							<ProgressiveBlurView
 								style={styles.blurOverlay}
 								blurType="light"
-								blurAmount={12}
+								blurAmount={18}
 								end={{ x: 1, y: 0 }}
 							/>
 						</View>
@@ -163,14 +153,14 @@ function App(): React.JSX.Element {
 					<ExampleCard>
 						<View style={styles.imageContainer}>
 							<Image
-								source={{ uri: "https://picsum.photos/400/200?random=3" }}
-								style={styles.placeholderImage}
+								source={require("./assets/modern-city-skyline-at-night-with-illuminated-skyscrapers-neon-lights-urban-architecture-cinemati.jpg")}
+								style={styles.backgroundImage}
 								resizeMode="cover"
 							/>
 							<ProgressiveBlurView
 								style={styles.blurOverlay}
 								blurType="dark"
-								blurAmount={15}
+								blurAmount={20}
 							/>
 						</View>
 					</ExampleCard>
@@ -181,14 +171,14 @@ function App(): React.JSX.Element {
 					<ExampleCard>
 						<View style={styles.imageContainer}>
 							<Image
-								source={{ uri: "https://picsum.photos/400/200?random=4" }}
-								style={styles.placeholderImage}
+								source={require("./assets/tropical-beach-with-crystal-clear-turquoise-water-white-sand-palm-trees-golden-hour-lighting-par.jpg")}
+								style={styles.backgroundImage}
 								resizeMode="cover"
 							/>
 							<ProgressiveBlurView
 								style={styles.blurOverlay}
 								blurType="xlight"
-								blurAmount={8}
+								blurAmount={12}
 							/>
 						</View>
 					</ExampleCard>
@@ -199,14 +189,14 @@ function App(): React.JSX.Element {
 					<ExampleCard>
 						<View style={styles.imageContainer}>
 							<Image
-								source={{ uri: "https://picsum.photos/400/200?random=5" }}
-								style={styles.placeholderImage}
+								source={require("./assets/beautiful-mountain-landscape-with-snow-capped-peaks-lake-reflection-vibrant-sunset-colors-high-re.jpg")}
+								style={styles.backgroundImage}
 								resizeMode="cover"
 							/>
 							<ProgressiveBlurView
 								style={styles.blurOverlay}
 								blurType="light"
-								blurAmount={12}
+								blurAmount={16}
 							/>
 							<View style={styles.textOverlay}>
 								<Text style={styles.overlayTitle}>Overlay Content</Text>
@@ -217,20 +207,39 @@ function App(): React.JSX.Element {
 						</View>
 					</ExampleCard>
 
+					<Section title="Custom Linear Gradient">
+						Using a custom LinearGradient component as mask element
+					</Section>
+					<ExampleCard>
+						<View style={styles.imageContainer}>
+							<Image
+								source={require("./assets/dense-forest-with-tall-trees-misty-atmosphere-sunbeams-through-leaves-natural-green-tones-serene.jpg")}
+								style={styles.backgroundImage}
+								resizeMode="cover"
+							/>
+							<ProgressiveBlurView
+								style={styles.blurOverlay}
+								blurType="prominent"
+								blurAmount={25}
+								maskElement={<View style={styles.customLinearGradient} />}
+							/>
+						</View>
+					</ExampleCard>
+
 					<Section title="Custom Gradient with Opacities">
 						Using custom opacity values for gradual fade effect
 					</Section>
 					<ExampleCard>
 						<View style={styles.imageContainer}>
 							<Image
-								source={{ uri: "https://picsum.photos/400/200?random=6" }}
-								style={styles.placeholderImage}
+								source={require("./assets/modern-city-skyline-at-night-with-illuminated-skyscrapers-neon-lights-urban-architecture-cinemati.jpg")}
+								style={styles.backgroundImage}
 								resizeMode="cover"
 							/>
 							<ProgressiveBlurView
 								style={styles.blurOverlay}
 								blurType="light"
-								blurAmount={15}
+								blurAmount={20}
 								opacities={[0, 0.2, 0.5, 0.8, 1]}
 								locations={[0, 0.3, 0.5, 0.7, 1]}
 							/>
@@ -243,14 +252,14 @@ function App(): React.JSX.Element {
 					<ExampleCard>
 						<View style={styles.imageContainer}>
 							<Image
-								source={{ uri: "https://picsum.photos/400/200?random=7" }}
-								style={styles.placeholderImage}
+								source={require("./assets/tropical-beach-with-crystal-clear-turquoise-water-white-sand-palm-trees-golden-hour-lighting-par.jpg")}
+								style={styles.backgroundImage}
 								resizeMode="cover"
 							/>
 							<ProgressiveBlurView
 								style={styles.blurOverlay}
 								blurType="dark"
-								blurAmount={12}
+								blurAmount={18}
 								start={{ x: 0, y: 0 }}
 								end={{ x: 1, y: 1 }}
 								opacities={[0, 0.6, 1]}
@@ -264,14 +273,14 @@ function App(): React.JSX.Element {
 					<ExampleCard>
 						<View style={styles.imageContainer}>
 							<Image
-								source={{ uri: "https://picsum.photos/400/200?random=8" }}
-								style={styles.placeholderImage}
+								source={require("./assets/beautiful-mountain-landscape-with-snow-capped-peaks-lake-reflection-vibrant-sunset-colors-high-re.jpg")}
+								style={styles.backgroundImage}
 								resizeMode="cover"
 							/>
 							<ProgressiveBlurView
 								style={styles.blurOverlay}
 								blurType="prominent"
-								blurAmount={18}
+								blurAmount={22}
 								end={{ x: 1, y: 0 }}
 								opacities={[0, 0.1, 0.3, 0.7, 0.9, 1]}
 								locations={[0, 0.2, 0.4, 0.6, 0.8, 1]}
@@ -285,14 +294,14 @@ function App(): React.JSX.Element {
 					<ExampleCard>
 						<View style={styles.imageContainer}>
 							<Image
-								source={{ uri: "https://picsum.photos/400/200?random=9" }}
-								style={styles.placeholderImage}
+								source={require("./assets/dense-forest-with-tall-trees-misty-atmosphere-sunbeams-through-leaves-natural-green-tones-serene.jpg")}
+								style={styles.backgroundImage}
 								resizeMode="cover"
 							/>
 							<ProgressiveBlurView
 								style={styles.blurOverlay}
 								blurType="light"
-								blurAmount={20}
+								blurAmount={28}
 								maskElement={
 									<View style={styles.radialMask}>
 										<View style={styles.radialGradient} />
@@ -308,14 +317,14 @@ function App(): React.JSX.Element {
 					<ExampleCard>
 						<View style={styles.imageContainer}>
 							<Image
-								source={{ uri: "https://picsum.photos/400/200?random=10" }}
-								style={styles.placeholderImage}
+								source={require("./assets/modern-city-skyline-at-night-with-illuminated-skyscrapers-neon-lights-urban-architecture-cinemati.jpg")}
+								style={styles.backgroundImage}
 								resizeMode="cover"
 							/>
 							<ProgressiveBlurView
 								style={styles.blurOverlay}
 								blurType="dark"
-								blurAmount={25}
+								blurAmount={30}
 								maskElement={
 									<View style={styles.customMask}>
 										<View style={styles.circularMask} />
@@ -376,6 +385,11 @@ const styles = StyleSheet.create({
 	imageContainer: {
 		height: 200,
 		position: "relative",
+	},
+	backgroundImage: {
+		width: "100%",
+		height: "100%",
+		position: "absolute",
 	},
 	placeholderImage: {
 		flex: 1,
@@ -456,6 +470,13 @@ const styles = StyleSheet.create({
 		backgroundColor: "transparent",
 		borderWidth: 30,
 		borderColor: "rgba(255, 255, 255, 0.9)",
+	},
+	customLinearGradient: {
+		flex: 1,
+		width: "100%",
+		height: "100%",
+		backgroundColor: "rgba(255, 255, 255, 0.5)",
+		opacity: 0.8,
 	},
 });
 
