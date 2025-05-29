@@ -1,13 +1,16 @@
 {
 	"name": "react-native-progressive-blur-view",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "A progressive blur view component for React Native",
 	"main": "lib/commonjs/index.js",
 	"module": "lib/module/index.js",
 	"types": "lib/typescript/index.d.ts",
 	"react-native": "src/index.ts",
 	"source": "src/index.ts",
-	"files": ["src", "lib"],
+	"files": [
+		"src",
+		"lib"
+	],
 	"scripts": {
 		"build": "bob build",
 		"typecheck": "tsc --noEmit",
@@ -18,7 +21,11 @@
 		"release:minor": "npm version minor && git push && git push --tags",
 		"release:major": "npm version major && git push && git push --tags"
 	},
-	"keywords": ["react-native", "blur", "progressive"],
+	"keywords": [
+		"react-native",
+		"blur",
+		"progressive"
+	],
 	"license": "MIT",
 	"repository": {
 		"type": "git",
@@ -56,7 +63,11 @@
 	"react-native-builder-bob": {
 		"source": "src",
 		"output": "lib",
-		"targets": ["commonjs", "module", "typescript"]
+		"targets": [
+			"commonjs",
+			"module",
+			"typescript"
+		]
 	},
 	"engines": {
 		"node": ">=18"
