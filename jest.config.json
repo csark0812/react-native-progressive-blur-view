@@ -1,0 +1,15 @@
+{
+	"testEnvironment": "node",
+	"setupFilesAfterEnv": ["<rootDir>/jest.setup.js"],
+	"moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json"],
+	"transform": {
+		"^.+\\.(ts|tsx)$": "ts-jest"
+	},
+	"testRegex": "src/__tests__/.*\\.(test|spec)\\.(ts|tsx|js)$",
+	"collectCoverageFrom": [
+		"src/**/*.{ts,tsx}",
+		"!src/**/*.d.ts",
+		"!src/__tests__/**"
+	],
+	"testPathIgnorePatterns": ["<rootDir>/lib/"]
+}
