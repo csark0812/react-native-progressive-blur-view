@@ -1,14 +1,17 @@
 import * as React from "react";
 import { View, StyleSheet } from "react-native";
 import type { ViewProps } from "react-native";
-import { BlurView } from "@react-native-community/blur";
+import { BlurView, type BlurViewProps } from "@react-native-community/blur";
 import MaskedView from "@react-native-masked-view/masked-view";
 import LinearGradient from "react-native-linear-gradient";
+import type { LinearGradientProps } from "react-native-linear-gradient";
 
-export interface ProgressiveBlurViewProps extends ViewProps {
-	blurType?: "xlight" | "light" | "dark";
-	blurAmount?: number;
-	gradientDirection?: "vertical" | "horizontal";
+export interface ProgressiveBlurViewProps
+	extends ViewProps,
+		Omit<BlurViewProps, "style">,
+		Omit<LinearGradientProps, "style" | "colors"> {
+	opacities?: ReadonlyArray<number>;
+	maskElement?: React.ReactElement;
 }
 
 export const ProgressiveBlurView = React.forwardRef<
@@ -19,36 +22,44 @@ export const ProgressiveBlurView = React.forwardRef<
 		{
 			children,
 			style,
-			blurType = "light",
-			blurAmount = 10,
-			gradientDirection = "vertical",
-			...otherProps
+			opacities,
+			maskElement,
+			start,
+			end,
+			locations,
+			...blurViewProps
 		},
 		ref,
 	) => {
-		const gradientStart =
-			gradientDirection === "vertical" ? { x: 0, y: 0 } : { x: 0, y: 0 };
-		const gradientEnd =
-			gradientDirection === "vertical" ? { x: 0, y: 1 } : { x: 1, y: 0 };
+		const gradientStart = start || { x: 0, y: 0 };
+		const gradientEnd = end || { x: 0, y: 1 };
+
+		// Convert opacities array to rgba colors if provided
+		const gradientColors = React.useMemo(() => {
+			if (opacities) {
+				return opacities.map((opacity) => `rgba(0, 0, 0, ${opacity})`);
+			}
+			return ["transparent", "black"];
+		}, [opacities]);
+
+		// Use custom maskElement if provided, otherwise default LinearGradient
+		const defaultMaskElement = (
+			<LinearGradient
+				style={StyleSheet.absoluteFillObject}
+				start={gradientStart}
+				end={gradientEnd}
+				colors={gradientColors}
+				locations={locations}
+			/>
+		);
 
 		return (
-			<View ref={ref} style={[styles.container, style]} {...otherProps}>
+			<View ref={ref} style={[styles.container, style]}>
 				<MaskedView
 					style={StyleSheet.absoluteFillObject}
-					maskElement={
-						<LinearGradient
-							style={StyleSheet.absoluteFillObject}
-							start={gradientStart}
-							end={gradientEnd}
-							colors={["transparent", "black"]}
-						/>
-					}
+					maskElement={maskElement || defaultMaskElement}
 				>
-					<BlurView
-						style={StyleSheet.absoluteFillObject}
-						blurType={blurType}
-						blurAmount={blurAmount}
-					/>
+					<BlurView style={StyleSheet.absoluteFillObject} {...blurViewProps} />
 				</MaskedView>
 				{children}
 			</View>

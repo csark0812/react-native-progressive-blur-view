@@ -16,10 +16,12 @@ import {
 	useColorScheme,
 	View,
 	Dimensions,
+	Image,
 } from "react-native";
 
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import { ProgressiveBlurView } from "react-native-progressive-blur-view";
+import LinearGradient from "react-native-linear-gradient";
 
 type SectionProps = PropsWithChildren<{
 	title: string;
@@ -114,41 +116,34 @@ function App(): React.JSX.Element {
 					</Section>
 					<ExampleCard>
 						<View style={styles.imageContainer}>
-							<View
-								style={[
-									styles.placeholderImage,
-									{ backgroundColor: "#4A90E2" },
-								]}
-							>
-								<Text style={styles.placeholderText}>Sample Content</Text>
-							</View>
+							<Image
+								source={{ uri: "https://picsum.photos/400/200?random=1" }}
+								style={styles.placeholderImage}
+								resizeMode="cover"
+							/>
 							<ProgressiveBlurView
 								style={styles.blurOverlay}
 								blurType="light"
 								blurAmount={10}
-								gradientDirection="vertical"
 							/>
 						</View>
 					</ExampleCard>
 
 					<Section title="Horizontal Blur">
-						Horizontal progressive blur from left to right
+						Horizontal progressive blur using end coordinates
 					</Section>
 					<ExampleCard>
 						<View style={styles.imageContainer}>
-							<View
-								style={[
-									styles.placeholderImage,
-									{ backgroundColor: "#50C878" },
-								]}
-							>
-								<Text style={styles.placeholderText}>Horizontal Blur</Text>
-							</View>
+							<Image
+								source={{ uri: "https://picsum.photos/400/200?random=2" }}
+								style={styles.placeholderImage}
+								resizeMode="cover"
+							/>
 							<ProgressiveBlurView
 								style={styles.blurOverlay}
 								blurType="light"
 								blurAmount={12}
-								gradientDirection="horizontal"
+								end={{ x: 1, y: 0 }}
 							/>
 						</View>
 					</ExampleCard>
@@ -158,19 +153,15 @@ function App(): React.JSX.Element {
 					</Section>
 					<ExampleCard>
 						<View style={styles.imageContainer}>
-							<View
-								style={[
-									styles.placeholderImage,
-									{ backgroundColor: "#FFB347" },
-								]}
-							>
-								<Text style={styles.placeholderText}>Dark Blur</Text>
-							</View>
+							<Image
+								source={{ uri: "https://picsum.photos/400/200?random=3" }}
+								style={styles.placeholderImage}
+								resizeMode="cover"
+							/>
 							<ProgressiveBlurView
 								style={styles.blurOverlay}
 								blurType="dark"
 								blurAmount={15}
-								gradientDirection="vertical"
 							/>
 						</View>
 					</ExampleCard>
@@ -180,19 +171,15 @@ function App(): React.JSX.Element {
 					</Section>
 					<ExampleCard>
 						<View style={styles.imageContainer}>
-							<View
-								style={[
-									styles.placeholderImage,
-									{ backgroundColor: "#FF6B9D" },
-								]}
-							>
-								<Text style={styles.placeholderText}>Extra Light</Text>
-							</View>
+							<Image
+								source={{ uri: "https://picsum.photos/400/200?random=4" }}
+								style={styles.placeholderImage}
+								resizeMode="cover"
+							/>
 							<ProgressiveBlurView
 								style={styles.blurOverlay}
 								blurType="xlight"
 								blurAmount={8}
-								gradientDirection="vertical"
 							/>
 						</View>
 					</ExampleCard>
@@ -202,19 +189,15 @@ function App(): React.JSX.Element {
 					</Section>
 					<ExampleCard>
 						<View style={styles.imageContainer}>
-							<View
-								style={[
-									styles.placeholderImage,
-									{ backgroundColor: "#9B59B6" },
-								]}
-							>
-								<Text style={styles.placeholderText}>Background Image</Text>
-							</View>
+							<Image
+								source={{ uri: "https://picsum.photos/400/200?random=5" }}
+								style={styles.placeholderImage}
+								resizeMode="cover"
+							/>
 							<ProgressiveBlurView
 								style={styles.blurOverlay}
 								blurType="light"
 								blurAmount={12}
-								gradientDirection="vertical"
 							/>
 							<View style={styles.textOverlay}>
 								<Text style={styles.overlayTitle}>Overlay Content</Text>
@@ -222,6 +205,99 @@ function App(): React.JSX.Element {
 									This text appears over the progressive blur effect
 								</Text>
 							</View>
+						</View>
+					</ExampleCard>
+
+					<Section title="Custom Gradient with Opacities">
+						Using custom opacity values for gradual fade effect
+					</Section>
+					<ExampleCard>
+						<View style={styles.imageContainer}>
+							<Image
+								source={{ uri: "https://picsum.photos/400/200?random=6" }}
+								style={styles.placeholderImage}
+								resizeMode="cover"
+							/>
+							<ProgressiveBlurView
+								style={styles.blurOverlay}
+								blurType="light"
+								blurAmount={15}
+								opacities={[0, 0.2, 0.5, 0.8, 1]}
+								locations={[0, 0.3, 0.5, 0.7, 1]}
+							/>
+						</View>
+					</ExampleCard>
+
+					<Section title="Custom Start/End Points">
+						Diagonal gradient with custom start and end coordinates
+					</Section>
+					<ExampleCard>
+						<View style={styles.imageContainer}>
+							<Image
+								source={{ uri: "https://picsum.photos/400/200?random=7" }}
+								style={styles.placeholderImage}
+								resizeMode="cover"
+							/>
+							<ProgressiveBlurView
+								style={styles.blurOverlay}
+								blurType="dark"
+								blurAmount={12}
+								start={{ x: 0, y: 0 }}
+								end={{ x: 1, y: 1 }}
+								opacities={[0, 0.6, 1]}
+							/>
+						</View>
+					</ExampleCard>
+
+					<Section title="Fine-tuned Opacity Control">
+						Horizontal gradient with multiple opacity stops
+					</Section>
+					<ExampleCard>
+						<View style={styles.imageContainer}>
+							<Image
+								source={{ uri: "https://picsum.photos/400/200?random=8" }}
+								style={styles.placeholderImage}
+								resizeMode="cover"
+							/>
+							<ProgressiveBlurView
+								style={styles.blurOverlay}
+								blurType="prominent"
+								blurAmount={18}
+								end={{ x: 1, y: 0 }}
+								opacities={[0, 0.1, 0.3, 0.7, 0.9, 1]}
+								locations={[0, 0.2, 0.4, 0.6, 0.8, 1]}
+							/>
+						</View>
+					</ExampleCard>
+
+					<Section title="Custom Mask Element">
+						Using a custom radial gradient mask element
+					</Section>
+					<ExampleCard>
+						<View style={styles.imageContainer}>
+							<Image
+								source={{ uri: "https://picsum.photos/400/200?random=9" }}
+								style={styles.placeholderImage}
+								resizeMode="cover"
+							/>
+							<ProgressiveBlurView
+								style={styles.blurOverlay}
+								blurType="light"
+								blurAmount={20}
+								maskElement={
+									<LinearGradient
+										style={StyleSheet.absoluteFillObject}
+										colors={[
+											"rgba(0,0,0,0)",
+											"rgba(0,0,0,0.3)",
+											"rgba(0,0,0,1)",
+										]}
+										locations={[0, 0.5, 1]}
+										start={{ x: 0.5, y: 0.5 }}
+										end={{ x: 1, y: 1 }}
+									/>
+								}
+							/>
 						</View>
 					</ExampleCard>
 				</View>
@@ -279,8 +355,8 @@ const styles = StyleSheet.create({
 	},
 	placeholderImage: {
 		flex: 1,
-		justifyContent: "center",
-		alignItems: "center",
+		width: "100%",
+		height: "100%",
 	},
 	placeholderText: {
 		color: "white",
