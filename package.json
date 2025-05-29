@@ -7,22 +7,25 @@
 	"types": "lib/typescript/index.d.ts",
 	"react-native": "src/index.ts",
 	"source": "src/index.ts",
-	"files": [
-		"src",
-		"lib"
-	],
+	"files": ["src", "lib"],
 	"scripts": {
 		"build": "bob build",
 		"typecheck": "tsc --noEmit",
 		"lint": "eslint src",
+		"test": "jest",
 		"prepack": "npm run build"
 	},
-	"keywords": [
-		"react-native",
-		"blur",
-		"progressive"
-	],
+	"keywords": ["react-native", "blur", "progressive"],
 	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/csark0812/react-native-progressive-blur-view.git"
+	},
+	"homepage": "https://github.com/csark0812/react-native-progressive-blur-view#readme",
+	"bugs": {
+		"url": "https://github.com/csark0812/react-native-progressive-blur-view/issues"
+	},
+	"author": "csark0812",
 	"peerDependencies": {
 		"@react-native-community/blur": "^4.4.1",
 		"@react-native-masked-view/masked-view": "^0.3.2",
@@ -48,11 +51,7 @@
 	"react-native-builder-bob": {
 		"source": "src",
 		"output": "lib",
-		"targets": [
-			"commonjs",
-			"module",
-			"typescript"
-		]
+		"targets": ["commonjs", "module", "typescript"]
 	},
 	"engines": {
 		"node": ">=18"

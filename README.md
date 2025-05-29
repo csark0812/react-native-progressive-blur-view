@@ -1,5 +1,9 @@
 # react-native-progressive-blur-view
 
+[![npm version](https://badge.fury.io/js/react-native-progressive-blur-view.svg)](https://badge.fury.io/js/react-native-progressive-blur-view)
+[![npm downloads](https://img.shields.io/npm/dm/react-native-progressive-blur-view.svg)](https://www.npmjs.com/package/react-native-progressive-blur-view)
+[![license](https://img.shields.io/npm/l/react-native-progressive-blur-view.svg)](https://github.com/csark0812/react-native-progressive-blur-view/blob/main/LICENSE)
+
 A progressive blur view component for React Native that combines blur effects with gradient masks for smooth transitions.
 
 ## Installation
