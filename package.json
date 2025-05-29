@@ -1,6 +1,6 @@
 {
 	"name": "react-native-progressive-blur-view",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "A progressive blur view component for React Native",
 	"main": "lib/commonjs/index.js",
 	"module": "lib/module/index.js",
