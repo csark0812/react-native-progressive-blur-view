@@ -13,7 +13,10 @@
 		"typecheck": "tsc --noEmit",
 		"lint": "eslint src",
 		"test": "jest",
-		"prepack": "npm run build"
+		"prepack": "npm run build",
+		"release:patch": "npm version patch && git push && git push --tags",
+		"release:minor": "npm version minor && git push && git push --tags",
+		"release:major": "npm version major && git push && git push --tags"
 	},
 	"keywords": ["react-native", "blur", "progressive"],
 	"license": "MIT",
