@@ -1,4 +1,4 @@
-import { useMemo, forwardRef } from "react";
+import React, { useMemo, forwardRef } from "react";
 import type { ReactElement } from "react";
 import { View, StyleSheet } from "react-native";
 import type { ViewProps } from "react-native";
