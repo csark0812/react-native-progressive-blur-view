@@ -20,8 +20,6 @@ import {
 
 import { Colors } from "react-native/Libraries/NewAppScreen";
 
-import { ProgressiveBlurView } from "react-native-progressive-blur-view";
-
 type SectionProps = PropsWithChildren<{
 	title: string;
 }>;
@@ -123,12 +121,6 @@ function App(): React.JSX.Element {
 							>
 								<Text style={styles.placeholderText}>Sample Content</Text>
 							</View>
-							<ProgressiveBlurView
-								style={styles.blurOverlay}
-								blurType="light"
-								blurAmount={10}
-								gradientDirection="vertical"
-							/>
 						</View>
 					</ExampleCard>
 
@@ -145,12 +137,6 @@ function App(): React.JSX.Element {
 							>
 								<Text style={styles.placeholderText}>Horizontal Blur</Text>
 							</View>
-							<ProgressiveBlurView
-								style={styles.blurOverlay}
-								blurType="light"
-								blurAmount={15}
-								gradientDirection="horizontal"
-							/>
 						</View>
 					</ExampleCard>
 
@@ -167,12 +153,6 @@ function App(): React.JSX.Element {
 							>
 								<Text style={styles.placeholderText}>Dark Blur</Text>
 							</View>
-							<ProgressiveBlurView
-								style={styles.blurOverlay}
-								blurType="dark"
-								blurAmount={20}
-								gradientDirection="vertical"
-							/>
 						</View>
 					</ExampleCard>
 
@@ -189,12 +169,6 @@ function App(): React.JSX.Element {
 							>
 								<Text style={styles.placeholderText}>Extra Light</Text>
 							</View>
-							<ProgressiveBlurView
-								style={styles.blurOverlay}
-								blurType="xlight"
-								blurAmount={8}
-								gradientDirection="vertical"
-							/>
 						</View>
 					</ExampleCard>
 
@@ -211,19 +185,12 @@ function App(): React.JSX.Element {
 							>
 								<Text style={styles.placeholderText}>Background Image</Text>
 							</View>
-							<ProgressiveBlurView
-								style={styles.blurOverlay}
-								blurType="light"
-								blurAmount={12}
-								gradientDirection="vertical"
-							>
-								<View style={styles.textOverlay}>
-									<Text style={styles.overlayTitle}>Overlay Content</Text>
-									<Text style={styles.overlayDescription}>
-										This text appears over the progressive blur effect
-									</Text>
-								</View>
-							</ProgressiveBlurView>
+							<View style={styles.textOverlay}>
+								<Text style={styles.overlayTitle}>Overlay Content</Text>
+								<Text style={styles.overlayDescription}>
+									This text appears over the progressive blur effect
+								</Text>
+							</View>
 						</View>
 					</ExampleCard>
 				</View>
