@@ -1,4 +1,5 @@
-import * as React from "react";
+import { useMemo, forwardRef } from "react";
+import type { ReactElement } from "react";
 import { View, StyleSheet } from "react-native";
 import type { ViewProps } from "react-native";
 import { BlurView, type BlurViewProps } from "@react-native-community/blur";
@@ -11,10 +12,10 @@ export interface ProgressiveBlurViewProps
 		Omit<BlurViewProps, "style">,
 		Omit<LinearGradientProps, "style" | "colors"> {
 	opacities?: ReadonlyArray<number>;
-	maskElement?: React.ReactElement;
+	maskElement?: ReactElement;
 }
 
-export const ProgressiveBlurView = React.forwardRef<
+export const ProgressiveBlurView = forwardRef<
 	View,
 	ProgressiveBlurViewProps
 >(
@@ -35,7 +36,7 @@ export const ProgressiveBlurView = React.forwardRef<
 		const gradientEnd = end || { x: 0, y: 1 };
 
 		// Convert opacities array to rgba colors if provided
-		const gradientColors = React.useMemo(() => {
+		const gradientColors = useMemo(() => {
 			if (opacities) {
 				return opacities.map((opacity) => `rgba(0, 0, 0, ${opacity})`);
 			}

@@ -21,7 +21,6 @@ import {
 
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import { ProgressiveBlurView } from "react-native-progressive-blur-view";
-import LinearGradient from "react-native-linear-gradient";
 
 type SectionProps = PropsWithChildren<{
 	title: string;
@@ -284,19 +283,6 @@ function App(): React.JSX.Element {
 								style={styles.blurOverlay}
 								blurType="light"
 								blurAmount={20}
-								maskElement={
-									<LinearGradient
-										style={StyleSheet.absoluteFillObject}
-										colors={[
-											"rgba(0,0,0,0)",
-											"rgba(0,0,0,0.3)",
-											"rgba(0,0,0,1)",
-										]}
-										locations={[0, 0.5, 1]}
-										start={{ x: 0.5, y: 0.5 }}
-										end={{ x: 1, y: 1 }}
-									/>
-								}
 							/>
 						</View>
 					</ExampleCard>
