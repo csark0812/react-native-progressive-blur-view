@@ -15,10 +15,7 @@ export interface ProgressiveBlurViewProps
 	maskElement?: ReactElement;
 }
 
-export const ProgressiveBlurView = forwardRef<
-	View,
-	ProgressiveBlurViewProps
->(
+export const ProgressiveBlurView = forwardRef<View, ProgressiveBlurViewProps>(
 	(
 		{
 			children,

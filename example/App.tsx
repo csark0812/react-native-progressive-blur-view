@@ -18,7 +18,6 @@ import {
 	Dimensions,
 	Image,
 } from "react-native";
-
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import { ProgressiveBlurView } from "react-native-progressive-blur-view";
 
@@ -40,6 +39,7 @@ function Section({ children, title }: SectionProps): React.JSX.Element {
 			>
 				{title}
 			</Text>
+
 			<Text
 				style={[
 					styles.sectionDescription,
@@ -99,6 +99,16 @@ function App(): React.JSX.Element {
 					>
 						ProgressiveBlurView
 					</Text>
+					<Image
+						source={{ uri: "https://picsum.photos/400/200" }}
+						style={{
+							width: 50,
+							height: 200,
+							borderRadius: 12,
+							marginBottom: 16,
+						}}
+						resizeMode="cover"
+					/>
 					<Text
 						style={[
 							styles.headerSubtitle,
@@ -116,7 +126,7 @@ function App(): React.JSX.Element {
 					<ExampleCard>
 						<View style={styles.imageContainer}>
 							<Image
-								source={{ uri: "https://picsum.photos/400/200?random=1" }}
+								source={{ uri: "https://picsum.photos/400/200" }}
 								style={styles.placeholderImage}
 								resizeMode="cover"
 							/>
@@ -283,6 +293,34 @@ function App(): React.JSX.Element {
 								style={styles.blurOverlay}
 								blurType="light"
 								blurAmount={20}
+								maskElement={
+									<View style={styles.radialMask}>
+										<View style={styles.radialGradient} />
+									</View>
+								}
+							/>
+						</View>
+					</ExampleCard>
+
+					<Section title="Custom SVG Mask">
+						Using custom SVG patterns for complex mask shapes
+					</Section>
+					<ExampleCard>
+						<View style={styles.imageContainer}>
+							<Image
+								source={{ uri: "https://picsum.photos/400/200?random=10" }}
+								style={styles.placeholderImage}
+								resizeMode="cover"
+							/>
+							<ProgressiveBlurView
+								style={styles.blurOverlay}
+								blurType="dark"
+								blurAmount={25}
+								maskElement={
+									<View style={styles.customMask}>
+										<View style={styles.circularMask} />
+									</View>
+								}
 							/>
 						</View>
 					</ExampleCard>
@@ -341,6 +379,7 @@ const styles = StyleSheet.create({
 	},
 	placeholderImage: {
 		flex: 1,
+		backgroundColor: "red",
 		width: "100%",
 		height: "100%",
 	},
@@ -385,6 +424,38 @@ const styles = StyleSheet.create({
 	},
 	highlight: {
 		fontWeight: "700",
+	},
+	radialMask: {
+		flex: 1,
+		width: "100%",
+		height: "100%",
+		justifyContent: "center",
+		alignItems: "center",
+	},
+	radialGradient: {
+		width: 150,
+		height: 150,
+		borderRadius: 75,
+		backgroundColor: "rgba(255, 255, 255, 0.8)",
+		shadowColor: "#000",
+		shadowOffset: { width: 0, height: 0 },
+		shadowOpacity: 0.3,
+		shadowRadius: 20,
+	},
+	customMask: {
+		flex: 1,
+		width: "100%",
+		height: "100%",
+		justifyContent: "center",
+		alignItems: "center",
+	},
+	circularMask: {
+		width: 120,
+		height: 120,
+		borderRadius: 60,
+		backgroundColor: "transparent",
+		borderWidth: 30,
+		borderColor: "rgba(255, 255, 255, 0.9)",
 	},
 });
 
