@@ -10,16 +10,17 @@
 		"test": "jest"
 	},
 	"dependencies": {
-		"react": "19.0.0",
-		"react-native": "0.79.2",
 		"@react-native-community/blur": "^4.4.0",
 		"@react-native-masked-view/masked-view": "^0.3.1",
-		"react-native-linear-gradient": "^2.8.3"
+		"react": "19.0.0",
+		"react-native": "0.79.2",
+		"react-native-linear-gradient": "^2.8.3",
+		"react-native-progressive-blur-view": "../"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.25.2",
 		"@babel/preset-env": "^7.25.3",
-		"@babel/runtime": "^7.25.0",
+		"@babel/runtime": "^7.27.3",
 		"@react-native-community/cli": "18.0.0",
 		"@react-native-community/cli-platform-android": "18.0.0",
 		"@react-native-community/cli-platform-ios": "18.0.0",

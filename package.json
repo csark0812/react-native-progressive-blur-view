@@ -7,22 +7,27 @@
 	"types": "lib/typescript/index.d.ts",
 	"react-native": "src/index.ts",
 	"source": "src/index.ts",
-	"files": ["src", "lib"],
+	"files": [
+		"src",
+		"lib"
+	],
 	"scripts": {
 		"build": "bob build",
 		"typecheck": "tsc --noEmit",
 		"lint": "eslint src",
 		"prepack": "npm run build"
 	},
-	"keywords": ["react-native", "blur", "progressive"],
+	"keywords": [
+		"react-native",
+		"blur",
+		"progressive"
+	],
 	"license": "MIT",
 	"peerDependencies": {
+		"@react-native-community/blur": "^4.4.1",
+		"@react-native-masked-view/masked-view": "^0.3.2",
 		"react": "*",
-		"react-native": "*"
-	},
-	"dependencies": {
-		"@react-native-masked-view/masked-view": "^0.3.1",
-		"@react-native-community/blur": "^4.4.0",
+		"react-native": "*",
 		"react-native-linear-gradient": "^2.8.3"
 	},
 	"devDependencies": {
@@ -30,6 +35,7 @@
 		"@types/react": "^19.0.0",
 		"@types/react-dom": "^19.0.0",
 		"@types/react-native": "^0.73.0",
+		"@types/react-native-linear-gradient": "^2.3.1",
 		"@typescript-eslint/eslint-plugin": "^8.0.0",
 		"@typescript-eslint/parser": "^8.0.0",
 		"eslint": "^8.19.0",
@@ -42,7 +48,11 @@
 	"react-native-builder-bob": {
 		"source": "src",
 		"output": "lib",
-		"targets": ["commonjs", "module", "typescript"]
+		"targets": [
+			"commonjs",
+			"module",
+			"typescript"
+		]
 	},
 	"engines": {
 		"node": ">=18"

@@ -22,6 +22,7 @@ export const ProgressiveBlurView = React.forwardRef<
 			blurType = "light",
 			blurAmount = 10,
 			gradientDirection = "vertical",
+			...otherProps
 		},
 		ref,
 	) => {
@@ -31,7 +32,7 @@ export const ProgressiveBlurView = React.forwardRef<
 			gradientDirection === "vertical" ? { x: 0, y: 1 } : { x: 1, y: 0 };
 
 		return (
-			<View ref={ref} style={[styles.container, style]}>
+			<View ref={ref} style={[styles.container, style]} {...otherProps}>
 				<MaskedView
 					style={StyleSheet.absoluteFillObject}
 					maskElement={
@@ -54,6 +55,8 @@ export const ProgressiveBlurView = React.forwardRef<
 		);
 	},
 );
+
+ProgressiveBlurView.displayName = "ProgressiveBlurView";
 
 const styles = StyleSheet.create({
 	container: {
