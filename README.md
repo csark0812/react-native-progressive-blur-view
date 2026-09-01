@@ -143,6 +143,11 @@ import LinearGradient from 'react-native-linear-gradient';
 
 See the `example` folder for a complete example app.
 
+## Related work
+
+- [expo-targets](https://github.com/csark0812/expo-targets) adds native extensions and targets to Expo apps.
+- [Christopher's profile](https://github.com/csark0812) connects the broader mobile and developer-tooling work.
+
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
